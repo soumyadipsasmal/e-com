@@ -1,0 +1,28 @@
+{% extends 'base.html'%}
+{% load static %}
+
+{% block content %}
+<section id="form"><!--form-->
+          <div class="container">
+                    <div class="row">
+                              <div class="col-sm-4 col-sm-offset-1">
+                                        <div class="login-form"><!--login form-->
+                                                  <h2>Singup to your account</h2>
+            
+                                       <form method="post">
+
+                                        {% csrf_token %}
+                                        {% for field in  form  %}
+                                        {{ field.errors }}
+                                        <p>{{field}} </p>
+                                        {% endfor %}
+                                        <button class="btn btn-default" type="submit">  Singup </button>
+                                        <a href="{% url 'login' %}"><span style="margin-left: 120px;">Already have Account</span> </a>
+                                        </form>
+ </div>    
+ </div>  
+
+ </div>    
+</div>          
+ </section>                                                           
+  {% endblock %}
